@@ -46,11 +46,21 @@
             background-color: #dc2626; /* 更深的紅色 */
         }
         .nav-container {
+            position: sticky; /* 關鍵：設定為 sticky */
+            top: 0; /* 關鍵：釘選在最頂部 */
+            z-index: 40; /* 確保它在內容之上 (下載按鈕 Z-50) */
             display: flex;
-            flex-wrap: wrap; /* 允許換行 */
-            justify-content: center;
+            /* flex-wrap: wrap; 改為 nowrap */
+            flex-wrap: nowrap; /* 關鍵：保持在同一行不換行 */
+            overflow-x: auto; /* 關鍵：內容超出一行時，允許橫向捲動 */
+            justify-content: flex-start; /* 捲動條從左邊開始 */
             gap: 0.5rem; /* 按鈕間距 */
+            padding: 0.75rem 0.5rem; /* 增加上下內邊距 */
             margin-bottom: 3rem; /* 與下方主內容的間距 */
+            background-color: rgba(248, 250, 252, 0.95); /* 帶有透明度的背景色 (配合 body) */
+            backdrop-filter: blur(8px); /* 毛玻璃效果 */
+            -webkit-backdrop-filter: blur(8px);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* 加上陰影以區隔 */
         }
     </style>
 </head>
@@ -832,7 +842,7 @@
             <article id="weekly-outlook" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-gray-700 flex items-center"><i class="fa-solid fa-calendar-week mr-3"></i><strong>未來一週展望</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4 structured-analysis">
-                    <ul class="list-disc space-y-3">
+                    <ul class="list-disc space-y-2">
                         <li><strong>核心焦點：政府停擺下的「數據真空」風險。</strong>美國政府停擺進入第 38 天，創下史上最長紀錄。市場的核心焦點轉向：關鍵經濟數據（特別是 CPI 和零售銷售）是否能如期公布？在缺乏數據指引下，聯準會 (Fed) 的政策路徑充滿不確定性，市場恐慌情緒易被放大。</li>
                         <li><strong>經濟數據觀察：</strong>若數據如期公布，市場將緊盯週四 (11/13) 的美國 10 月 CPI，以及週五 (11/14) 的零售銷售與 PPI 數據。在近期裁員數據不佳、勞動力市場疲軟的背景下，若通膨數據頑固，將使 Fed 陷入「停滯性通膨」的政策絕境，對市場衝擊巨大。</li>
                         <li><strong>財報季焦點轉移：</strong>美股財報季高峰已過，焦點轉向 CoreWeave、西方石油等特定產業。港股將迎來重磅財報週，騰訊、京東、中芯國際的業績將牽動亞洲市場情緒。</li>
