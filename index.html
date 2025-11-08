@@ -30,6 +30,28 @@
             .date-range { font-size: 1rem; }
         }
         #downloadBtn { position: fixed; bottom: 2rem; right: 2rem; z-index: 50; }
+        /* 新增的導覽按鈕樣式 */
+        .nav-button {
+            background-color: #ef4444; /* 紅色 */
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem; /* 圓角 */
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-size: 0.875rem; /* 調整字體大小 */
+            white-space: nowrap; /* 防止換行 */
+        }
+        .nav-button:hover {
+            background-color: #dc2626; /* 更深的紅色 */
+        }
+        .nav-container {
+            display: flex;
+            flex-wrap: wrap; /* 允許換行 */
+            justify-content: center;
+            gap: 0.5rem; /* 按鈕間距 */
+            margin-bottom: 3rem; /* 與下方主內容的間距 */
+        }
     </style>
 </head>
 <body class="text-slate-800">
@@ -42,9 +64,24 @@
             <p class="date-range-header font-semibold gradient-text mt-2">2025/11/03 ~ 2025/11/08</p>
             <p class="sub-title font-semibold text-blue-600 mt-2">AI估值修正、政府停擺創紀錄，市場拉回修正</p>
         </header>
+
+        <!-- 新增的章節導覽列 -->
+        <nav class="nav-container">
+            <a href="#market-pulse" class="nav-button">市場脈動</a>
+            <a href="#us-stock-checkup" class="nav-button">美股健檢</a>
+            <a href="#us-stock-structure" class="nav-button">美股剖析</a>
+            <a href="#macro-bonds" class="nav-button">總經美債</a>
+            <a href="#flow-analysis" class="nav-button">資金流向</a>
+            <a href="#commodities-market" class="nav-button">能源商品</a>
+            <a href="#tw-stock-analysis" class="nav-button">台股解析</a>
+            <a href="#twd-usd-analysis" class="nav-button">台幣美元</a>
+            <a href="#industry-outlook" class="nav-button">產業展望</a>
+            <a href="#weekly-outlook" class="nav-button">未來展望</a>
+        </nav>
+
         <main class="space-y-12">
             <!-- 1. 市場脈動 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="market-pulse" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-sky-600 flex items-center"><i class="fa-solid fa-chart-line mr-3"></i><strong>市場脈動</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4 md:grid md:grid-cols-2 md:gap-8">
                     <div>
@@ -96,7 +133,7 @@
                 <p class="text-xs text-slate-500 mt-6 text-center">© 2025 Eagle Eye Insight Desk — 溯源‧思辨‧啟發</p>
             </article>
             <!-- 2. 美股健檢報告 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="us-stock-checkup" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-sky-500 flex items-center"><i class="fa-solid fa-heart-pulse mr-3"></i><strong>美股健檢報告</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4">
                     <div class="overflow-x-auto mb-8">
@@ -218,7 +255,7 @@
                 <p class="text-xs text-slate-500 mt-6 text-center">© 2025 Eagle Eye Insight Desk — 溯源‧思辨‧啟發</p>
             </article>
             <!-- 3. 美股收盤結構剖析 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="us-stock-structure" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-red-600 flex items-center"><i class="fa-solid fa-chart-pie mr-3"></i><strong>美股收盤結構剖析</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4">
                     <div class="overflow-x-auto mb-8">
@@ -312,7 +349,7 @@
                 <p class="text-xs text-slate-500 mt-6 text-center">© 2025 Eagle Eye Insight Desk — 溯源‧思辨‧啟發</p>
             </article>
             <!-- 4. 總體經濟與美債 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="macro-bonds" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-blue-600 flex items-center"><i class="fa-solid fa-landmark mr-3"></i><strong>總體經濟與美債</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4">
                     <div class="overflow-x-auto">
@@ -392,7 +429,7 @@
                 <p class="text-xs text-slate-500 mt-6 text-center">© 2025 Eagle Eye Insight Desk — 溯源‧思辨‧啟發</p>
             </article>
             <!-- 5. 資金流向分析 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="flow-analysis" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-indigo-600 flex items-center"><i class="fa-solid fa-money-bill-transfer mr-3"></i><strong>資金流向分析 (BofA Global Research)</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4">
                     <div class="text-center mb-8">
@@ -480,7 +517,7 @@
                 <p class="text-xs text-slate-500 mt-6 text-center">© 2025 Eagle Eye Insight Desk — 溯源‧思辨‧啟發</p>
             </article>
             <!-- 6. 能源與商品市場 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="commodities-market" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-amber-600 flex items-center"><i class="fa-solid fa-fire-flame-simple mr-3"></i><strong>能源與商品市場</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4">
                     <div class="overflow-x-auto">
@@ -544,7 +581,7 @@
                 <p class="text-xs text-slate-500 mt-6 text-center">© 2025 Eagle Eye Insight Desk — 溯源‧思辨‧啟發</p>
             </article>
             <!-- 7. 台股盤勢解析 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="tw-stock-analysis" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-green-600 flex items-center"><i class="fa-solid fa-mountain-sun mr-3"></i><strong>台股盤勢解析</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4">
                     <div class="overflow-x-auto mb-8">
@@ -665,7 +702,7 @@
                 <p class="text-xs text-slate-500 mt-6 text-center">© 2025 Eagle Eye Insight Desk — 溯源‧思辨‧啟發</p>
             </article>
             <!-- 8. 台幣與美元走勢 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="twd-usd-analysis" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-cyan-600 flex items-center"><i class="fa-solid fa-dollar-sign mr-3"></i><strong>台幣與美元走勢</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4">
                     <div class="overflow-x-auto">
@@ -729,7 +766,7 @@
                 <p class="text-xs text-slate-500 mt-6 text-center">© 2025 Eagle Eye Insight Desk — 溯源‧思辨‧啟發</p>
             </article>
             <!-- 9. 產業多空展望 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="industry-outlook" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-purple-600 flex items-center"><i class="fa-solid fa-industry mr-3"></i><strong>產業多空展望</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4 space-y-10">
                     <div>
@@ -792,7 +829,7 @@
                 <p class="text-xs text-slate-500 mt-6 text-center">© 2025 Eagle Eye Insight Desk — 溯源‧思辨‧啟發</p>
             </article>
             <!-- 10. 未來一週展望 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="weekly-outlook" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-gray-700 flex items-center"><i class="fa-solid fa-calendar-week mr-3"></i><strong>未來一週展望</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4 structured-analysis">
                     <ul class="list-disc space-y-3">
@@ -804,7 +841,7 @@
                 <p class="text-xs text-slate-500 mt-6 text-center">© 2025 Eagle Eye Insight Desk — 溯源‧思辨‧啟發</p>
             </article>
             <!-- 11. 未來一週美國金融行事曆 -->
-            <article class="bg-white p-6 md:p-8 rounded-2xl shadow-lg">
+            <article id="weekly-calendar" class="bg-white p-6 md:p-8 rounded-2xl shadow-lg scroll-mt-20">
                 <h2 class="font-bold text-slate-600 flex items-center"><i class="fa-solid fa-calendar-alt mr-3"></i><strong>未來一週重點行事曆 (11/10 ~ 11/14)</strong></h2>
                 <div class="mt-4 border-t border-slate-200 pt-4">
                      <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-md" role="alert">
